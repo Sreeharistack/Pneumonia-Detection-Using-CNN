@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Python distribution
+build/
+dist/
+*.egg-info/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Machine Learning / Model files
+*.h5
+*.keras
+*.pkl
+*.pickle
+*.joblib
+
+# Large datasets
+*.csv
+*.zip
+*.tar
+*.gz
+
+# Kaggle credentials
+kaggle.json
