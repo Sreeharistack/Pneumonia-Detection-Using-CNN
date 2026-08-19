@@ -1,75 +1,61 @@
 # 🫁 Pneumonia Detection Using CNN
 
-> A deep learning project for classifying chest X-ray images into **Normal** and **Pneumonia** using a custom Convolutional Neural Network (CNN) built with TensorFlow/Keras.
+A deep learning project for classifying chest X-ray images into **NORMAL** and **PNEUMONIA** using a custom **Convolutional Neural Network (CNN)** built with **TensorFlow/Keras**.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
 ![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-red?logo=keras)
-![Deep Learning](https://img.shields.io/badge/Deep%20Learning-CNN-purple)
+![CNN](https://img.shields.io/badge/Model-CNN-purple)
 ![Computer Vision](https://img.shields.io/badge/Computer%20Vision-Medical%20Imaging-green)
 ![Google Colab](https://img.shields.io/badge/Google%20Colab-GPU-yellow?logo=googlecolab)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-## 📌 Overview
+## 📌 Project Overview
 
-Pneumonia is a serious respiratory infection that can affect one or both lungs. Chest X-rays are commonly used during the diagnostic process, but interpreting medical images can be challenging and time-consuming.
+Pneumonia is a respiratory infection that can affect one or both lungs. Chest X-ray imaging is commonly used as part of the diagnostic process.
 
-This project explores the application of **Convolutional Neural Networks (CNNs)** for automated classification of chest X-ray images.
-
-The model classifies chest X-ray images into two categories:
+This project demonstrates how **deep learning and computer vision** can be applied to classify chest X-ray images into two categories:
 
 * 🟢 **NORMAL**
 * 🔴 **PNEUMONIA**
 
-The project covers an end-to-end deep learning workflow including:
+A custom CNN architecture was developed using **TensorFlow/Keras** and trained on grayscale chest X-ray images.
 
-* Dataset preparation
-* Dataset verification
-* Exploratory Data Analysis
-* Class distribution analysis
-* Image visualization
-* Image preprocessing
-* Image normalization
-* Data augmentation
-* CNN architecture development
-* Class weighting
-* Model training
-* Model evaluation
-* ROC-AUC analysis
-* Confusion matrix analysis
-* Classification report
-* Single-image prediction
+The project covers the complete machine learning workflow:
+
+**Dataset Preparation → EDA → Preprocessing → Augmentation → Class Weighting → CNN Training → Evaluation → Visualization → Single-Image Prediction**
+
+> ⚠️ **Important:** This project is intended for educational and research purposes only. It is not a clinically validated medical diagnostic system.
 
 ---
 
-## 🎯 Objectives
+## 🎯 Project Objectives
 
-The main objectives of this project are:
-
-* Build a CNN-based binary image classification model.
-* Classify chest X-ray images as Normal or Pneumonia.
+* Build a custom CNN for binary image classification.
+* Classify chest X-ray images as NORMAL or PNEUMONIA.
 * Preprocess and normalize medical images.
-* Apply image augmentation to improve model generalization.
-* Analyze dataset structure and class distribution.
-* Address class imbalance using class weighting.
-* Train a custom CNN architecture.
-* Evaluate the model using multiple performance metrics.
-* Analyze classification performance using a confusion matrix.
-* Evaluate discrimination performance using ROC-AUC.
-* Perform prediction on individual chest X-ray images.
-* Explore the application of deep learning in medical image classification.
+* Apply image augmentation to improve generalization.
+* Analyze class distribution and imbalance.
+* Apply class weighting during training.
+* Train and evaluate a custom CNN.
+* Monitor Accuracy and AUC during training.
+* Analyze performance using a Confusion Matrix.
+* Evaluate classification using ROC-AUC.
+* Generate a Classification Report.
+* Perform single-image prediction.
+* Visualize training, validation, and testing performance.
 
 ---
 
 # 📊 Dataset
 
-This project uses the **Chest X-Ray Images (Pneumonia)** dataset.
+The project uses the **Chest X-Ray Images (Pneumonia)** dataset.
 
-The dataset contains approximately **5,863 chest X-ray images** organized into training, validation, and test sets.
+The dataset contains approximately **5,863 chest X-ray images** organized into training, validation, and testing sets.
 
-## Dataset Structure
+### Dataset Structure
 
 ```text
 chest_xray/
@@ -87,25 +73,20 @@ chest_xray/
     └── PNEUMONIA/
 ```
 
-## Classes
+### Classes
 
-| Class     | Description                   |
-| --------- | ----------------------------- |
-| NORMAL    | Chest X-ray without pneumonia |
-| PNEUMONIA | Chest X-ray showing pneumonia |
+| Class     | Description                         |
+| --------- | ----------------------------------- |
+| NORMAL    | Chest X-ray classified as normal    |
+| PNEUMONIA | Chest X-ray classified as pneumonia |
 
-The dataset contains an imbalanced distribution between the two classes. **Class weighting** was applied during model training to help address this imbalance.
+The dataset contains class imbalance, so **class weighting** was incorporated during model training.
 
 ---
 
-# 📊 Dataset Distribution
+# 📊 Dataset Class Distribution
 
-The dataset distribution was analyzed before model training to understand:
-
-* Number of images in each class
-* Distribution across train, validation, and test sets
-* Class imbalance
-* Dataset composition
+The class distribution was analyzed before training to understand the balance between NORMAL and PNEUMONIA images.
 
 ![Dataset Class Distribution](images/dataset_class_distribution.png)
 
@@ -113,53 +94,75 @@ The dataset distribution was analyzed before model training to understand:
 
 # 🖼️ Sample Chest X-Ray Images
 
-Sample chest X-ray images were visualized to understand the differences and variations present in the dataset.
+Sample images were visualized to understand the appearance, variation, and characteristics of the dataset.
 
 ![Sample Chest X-Ray Images](images/sample_pneumonia_xray_images.png)
 
 ---
 
-# 🔄 Project Workflow
+# 🔄 Machine Learning Workflow
 
 ```text
 Chest X-Ray Dataset
-        ↓
+        │
+        ▼
 Dataset Download
-        ↓
+        │
+        ▼
 Dataset Verification
-        ↓
+        │
+        ▼
 Exploratory Data Analysis
-        ↓
+        │
+        ▼
 Class Distribution Analysis
-        ↓
+        │
+        ▼
 Image Visualization
-        ↓
+        │
+        ▼
 Image Preprocessing
-        ↓
+        │
+        ▼
+Image Normalization
+        │
+        ▼
 Data Augmentation
-        ↓
+        │
+        ▼
 Class Weight Calculation
-        ↓
+        │
+        ▼
 CNN Architecture
-        ↓
+        │
+        ▼
 Model Compilation
-        ↓
+        │
+        ▼
 Model Training
-        ↓
+        │
+        ▼
 Early Stopping
-        ↓
-Learning Rate Adjustment
-        ↓
+        │
+        ▼
+Learning Rate Reduction
+        │
+        ▼
 Model Checkpointing
-        ↓
+        │
+        ▼
 Model Evaluation
-        ↓
+        │
+        ▼
 Confusion Matrix
-        ↓
+        │
+        ▼
 ROC-AUC Analysis
-        ↓
+        │
+        ▼
 Classification Report
-        ↓
+        │
+        ▼
 Single Image Prediction
 ```
 
@@ -167,9 +170,9 @@ Single Image Prediction
 
 # 🖼️ Image Preprocessing
 
-The chest X-ray images are prepared before being provided to the CNN model.
+The chest X-ray images are processed before being passed to the CNN.
 
-The preprocessing workflow includes:
+### Preprocessing Steps
 
 * Image resizing
 * Conversion to grayscale
@@ -180,19 +183,19 @@ The preprocessing workflow includes:
 * Validation data preparation
 * Test data preparation
 
-## Input Image Size
+### Input Shape
 
 ```text
 150 × 150 × 1
 ```
 
-The model uses grayscale chest X-ray images as input.
+The model uses grayscale chest X-ray images with normalized pixel values.
 
 ---
 
 # 🔁 Data Augmentation
 
-Data augmentation is applied to increase the diversity of training images and improve model generalization.
+Data augmentation was applied to increase training-image diversity and improve model generalization.
 
 The augmentation pipeline includes:
 
@@ -201,47 +204,43 @@ The augmentation pipeline includes:
 * Shearing
 * Horizontal flipping
 
-These transformations generate variations of training images and can help reduce overfitting.
+These transformations introduce variations in the training data and help reduce overfitting.
 
 ---
 
 # 🧠 CNN Architecture
 
-A custom **Convolutional Neural Network** is implemented using TensorFlow/Keras.
+A custom **Convolutional Neural Network** was developed using TensorFlow/Keras.
 
-## Architecture
+### Architecture
 
 ```text
 Input
 150 × 150 × 1
         │
         ▼
-Conv2D
-16 Filters
+Conv2D - 16 Filters
         │
 Batch Normalization
         │
 Max Pooling
         │
         ▼
-Conv2D
-32 Filters
+Conv2D - 32 Filters
         │
 Batch Normalization
         │
 Max Pooling
         │
         ▼
-Conv2D
-64 Filters
+Conv2D - 64 Filters
         │
 Batch Normalization
         │
 Max Pooling
         │
         ▼
-Conv2D
-128 Filters
+Conv2D - 128 Filters
         │
 Batch Normalization
         │
@@ -251,15 +250,17 @@ Max Pooling
 Flatten
         │
         ▼
-Dense - 128
-ReLU Activation
+Dense - 128 Neurons
+        │
+ReLU
         │
         ▼
 Dropout - 0.3
         │
         ▼
-Dense - 1
-Sigmoid Activation
+Dense - 1 Neuron
+        │
+Sigmoid
         │
         ▼
 NORMAL / PNEUMONIA
@@ -269,77 +270,75 @@ NORMAL / PNEUMONIA
 
 # ⚙️ Model Configuration
 
-| Component               | Configuration       |
-| ----------------------- | ------------------- |
-| Programming Language    | Python              |
-| Framework               | TensorFlow / Keras  |
-| Model                   | Sequential CNN      |
-| Input Shape             | 150 × 150 × 1       |
-| Classification          | Binary              |
-| Output Activation       | Sigmoid             |
-| Loss Function           | Binary Crossentropy |
-| Optimizer               | Adam                |
-| Learning Rate           | 0.0005              |
-| Main Metrics            | Accuracy, AUC       |
-| Dropout                 | 0.3                 |
-| Training Epochs         | Up to 25            |
-| Class Weighting         | Applied             |
-| Batch Normalization     | Applied             |
-| Data Augmentation       | Applied             |
-| Early Stopping          | Applied             |
-| Learning Rate Reduction | Applied             |
-| Model Checkpointing     | Applied             |
+| Component               | Configuration         |
+| ----------------------- | --------------------- |
+| Language                | Python                |
+| Framework               | TensorFlow / Keras    |
+| Model                   | Sequential CNN        |
+| Input Shape             | 150 × 150 × 1         |
+| Task                    | Binary Classification |
+| Output Activation       | Sigmoid               |
+| Loss Function           | Binary Crossentropy   |
+| Optimizer               | Adam                  |
+| Learning Rate           | 0.0005                |
+| Metrics                 | Accuracy, AUC         |
+| Dropout                 | 0.3                   |
+| Maximum Epochs          | 25                    |
+| Batch Normalization     | Yes                   |
+| Data Augmentation       | Yes                   |
+| Class Weighting         | Yes                   |
+| Early Stopping          | Yes                   |
+| Learning Rate Reduction | Yes                   |
+| Model Checkpointing     | Yes                   |
 
 ---
 
 # 🏋️ Model Training
 
-The CNN model is trained for up to **25 epochs**.
+The CNN was trained for up to **25 epochs**.
 
-During training, the following metrics are monitored:
+The following metrics were monitored:
 
-* Training Loss
-* Validation Loss
 * Training Accuracy
 * Validation Accuracy
+* Training Loss
+* Validation Loss
 * Training AUC
 * Validation AUC
 
-The training process also uses:
+Training incorporated:
 
-* **Class weighting** to address class imbalance
-* **Early Stopping** to reduce unnecessary training
-* **ReduceLROnPlateau** to adjust the learning rate
-* **ModelCheckpoint** to save the best model
-* **Batch Normalization** for more stable training
-* **Dropout** for regularization
-* **Data Augmentation** for improved generalization
-
----
-
-# 📈 Training and Validation Curves
-
-The training history is analyzed using accuracy and loss curves.
-
-![Training Validation Curves](images/training_validation_curves.png)
+* Class weighting
+* Data augmentation
+* Batch normalization
+* Dropout
+* Early stopping
+* Learning-rate reduction
+* Model checkpointing
 
 ---
 
-# 📊 Training, Validation and Testing Performance
+# 📈 Training & Validation Curves
 
-Training, validation, and testing performance are compared to understand model learning and generalization.
+Training and validation curves were generated to analyze the learning behavior of the CNN.
+
+![Training and Validation Curves](images/training_validation_curves.png)
+
+---
+
+# 📊 Training, Validation & Testing Performance
+
+Training, validation, and testing performance were compared to analyze model learning and generalization.
 
 ![Training Validation Test Curves](images/training_validation_test_curves.png)
-
-![Training vs Testing Metrics](images/training_vs_testing_metrics.png)
 
 ---
 
 # 📊 Model Performance
 
-The trained CNN model was evaluated on the held-out test dataset containing **624 chest X-ray images**.
+The trained CNN was evaluated using a held-out test dataset containing **624 chest X-ray images**.
 
-## 🧪 Test Results
+## Test Performance
 
 | Metric        |      Score |
 | ------------- | ---------: |
@@ -348,9 +347,7 @@ The trained CNN model was evaluated on the held-out test dataset containing **62
 | ROC-AUC       | **0.9661** |
 | Test Loss     | **0.2559** |
 
----
-
-# 🏋️ Training Results
+### Training Performance
 
 | Metric            |      Score |
 | ----------------- | ---------: |
@@ -358,9 +355,13 @@ The trained CNN model was evaluated on the held-out test dataset containing **62
 | Training AUC      | **0.9962** |
 | Training Loss     | **0.0667** |
 
+The independently calculated ROC-AUC was **0.9661**, while the AUC reported during model evaluation was **0.9646**.
+
 ---
 
 # 📋 Classification Report
+
+Performance on the held-out test dataset:
 
 | Class                | Precision |   Recall | F1-Score | Support |
 | -------------------- | --------: | -------: | -------: | ------: |
@@ -372,9 +373,9 @@ The trained CNN model was evaluated on the held-out test dataset containing **62
 
 ---
 
-# 📈 ROC-AUC
+# 📈 ROC Curve
 
-The model achieved a **ROC-AUC of 0.9661**, indicating strong discrimination between Normal and Pneumonia chest X-ray images across different classification thresholds.
+The model achieved a **ROC-AUC score of 0.9661** on the test dataset, indicating strong discrimination between the two classes.
 
 ![ROC Curve](images/roc_curve.png)
 
@@ -382,7 +383,7 @@ The model achieved a **ROC-AUC of 0.9661**, indicating strong discrimination bet
 
 # 🔲 Confusion Matrix
 
-The confusion matrix provides a detailed view of:
+The confusion matrix provides a detailed view of the model's classification performance, including:
 
 * True Positives
 * True Negatives
@@ -395,60 +396,58 @@ The confusion matrix provides a detailed view of:
 
 # 📉 Training vs Testing Metrics
 
-The training and testing metrics are compared to analyze the model's generalization performance.
+Training and testing metrics were compared to evaluate the model's generalization performance.
 
 ![Training vs Testing Metrics](images/training_vs_testing_metrics.png)
 
 ---
 
-# 🔍 Key Performance Observations
+# 🔍 Performance Summary
 
-* ✅ Achieved **91.67% test accuracy**.
-* ✅ Achieved **0.9661 ROC-AUC**.
-* ✅ Pneumonia recall reached **94%**.
-* ✅ Pneumonia F1-score reached **0.93**.
-* ✅ Normal class achieved **88% recall**.
-* ✅ Normal class achieved **0.89 F1-score**.
-* ✅ Class weighting was applied during training to address class imbalance.
-* ✅ Data augmentation was used to improve generalization.
-* ✅ Batch Normalization was used for more stable training.
-* ✅ Dropout regularization was applied.
-* ✅ Early stopping was used during training.
-* ✅ Learning-rate reduction was applied.
-* ✅ Model checkpointing was used.
-* ⚠️ The difference between training accuracy (**97.60%**) and test accuracy (**91.67%**) indicates a generalization gap that can be further investigated.
-
-> **Important:** These results are from this project's test dataset and should not be interpreted as clinical performance.
+| Metric              |     Result |
+| ------------------- | ---------: |
+| Test Accuracy       | **91.67%** |
+| Test AUC            | **0.9646** |
+| ROC-AUC             | **0.9661** |
+| Training Accuracy   | **97.60%** |
+| Training AUC        | **0.9962** |
+| Pneumonia Precision |   **0.93** |
+| Pneumonia Recall    |   **0.94** |
+| Pneumonia F1-Score  |   **0.93** |
+| Normal Precision    |   **0.90** |
+| Normal Recall       |   **0.88** |
+| Normal F1-Score     |   **0.89** |
+| Test Images         |    **624** |
 
 ---
 
-# 📊 Training & Evaluation
+# 🔍 Key Findings
 
-The notebook includes visual analysis of:
+* ✅ Test accuracy reached **91.67%**.
+* ✅ ROC-AUC reached **0.9661**.
+* ✅ Pneumonia recall reached **94%**.
+* ✅ Pneumonia F1-score reached **0.93**.
+* ✅ Normal recall reached **88%**.
+* ✅ Normal F1-score reached **0.89**.
+* ✅ Class weighting was applied.
+* ✅ Data augmentation was applied.
+* ✅ Batch normalization was used.
+* ✅ Dropout regularization was used.
+* ✅ Early stopping was implemented.
+* ✅ Learning-rate reduction was implemented.
+* ✅ Model checkpointing was implemented.
 
-* Training vs Validation Accuracy
-* Training vs Validation Loss
-* Training vs Testing Accuracy
-* Training vs Testing Loss
-* Confusion Matrix
-* ROC Curve
-* Classification Report
+The training accuracy of **97.60%** compared with test accuracy of **91.67%** indicates a generalization gap that could be investigated through additional regularization, external validation, and transfer-learning approaches.
 
-These visualizations are used to analyze:
-
-* Model learning
-* Generalization
-* Classification errors
-* Class performance
-* Discrimination performance
+> **Note:** These results are based on the project's held-out test dataset and should not be interpreted as clinical performance.
 
 ---
 
 # 🧪 Single Image Prediction
 
-The trained model can also classify an individual chest X-ray image.
+The trained model can classify an individual chest X-ray image.
 
-## Prediction Pipeline
+### Prediction Pipeline
 
 ```text
 Input Chest X-Ray
@@ -468,39 +467,37 @@ Threshold = 0.5
 NORMAL / PNEUMONIA
 ```
 
-## Example Prediction
+### Example
 
 ```text
 Prediction: PNEUMONIA
 Probability: 0.xx
 ```
 
-The notebook contains examples for predicting both Pneumonia and Normal test images.
+The notebook contains examples demonstrating individual image prediction.
 
 ---
 
 # 🔬 Technical Highlights
 
-* Custom CNN built from scratch using TensorFlow/Keras
+* Custom CNN architecture
 * Four convolutional blocks
-* 16, 32, 64, and 128 convolutional filters
+* 16, 32, 64, and 128 filters
 * Batch Normalization
 * Max Pooling
 * Flatten layer
 * Dense layer with 128 neurons
 * ReLU activation
 * Dropout regularization
-* Sigmoid output activation
-* Binary classification
-* Binary Crossentropy loss
+* Sigmoid output
+* Binary Crossentropy
 * Adam optimizer
-* Learning-rate reduction
-* Early stopping
-* Model checkpointing
+* Data augmentation
 * Class weighting
-* Image augmentation
-* Grayscale image processing
-* ROC-AUC analysis
+* Early stopping
+* Learning-rate reduction
+* Model checkpointing
+* ROC-AUC evaluation
 * Confusion Matrix
 * Classification Report
 * Single-image inference
@@ -509,37 +506,33 @@ The notebook contains examples for predicting both Pneumonia and Normal test ima
 
 # 🛠️ Technologies Used
 
-## Programming
+### Programming
 
 * Python
 
-## Deep Learning
+### Deep Learning
 
 * TensorFlow
 * Keras
 * Convolutional Neural Networks
 
-## Data Processing
+### Data Processing
 
 * NumPy
 * Pandas
 * Pillow
 
-## Visualization
+### Visualization
 
 * Matplotlib
 * Seaborn
 
-## Development Environment
+### Development
 
 * Google Colab
 * GPU-based training
 
-## Dataset
-
-* Chest X-Ray Images (Pneumonia)
-
-## Dataset Access
+### Dataset Access
 
 * Kaggle API
 
@@ -558,6 +551,7 @@ Pneumonia-Detection-Using-CNN/
 ├── Pneumonia_Detection_Using_CNN.ipynb
 │
 └── images/
+    │
     ├── dataset_class_distribution.png
     ├── sample_pneumonia_xray_images.png
     ├── training_validation_curves.png
@@ -569,7 +563,7 @@ Pneumonia-Detection-Using-CNN/
 
 ---
 
-# 🚀 How to Run
+# 🚀 How to Run the Project
 
 ## 1. Clone the Repository
 
@@ -589,7 +583,7 @@ cd Pneumonia-Detection-Using-CNN
 pip install -r requirements.txt
 ```
 
-Or install the main dependencies manually:
+Or install the required packages manually:
 
 ```bash
 pip install tensorflow keras numpy pandas matplotlib seaborn pillow kaggle
@@ -611,9 +605,9 @@ The notebook uses the Kaggle API to download the dataset.
 
 Configure your Kaggle API credentials before running the dataset download section.
 
-## 6. Run the Notebook
+## 6. Execute the Notebook
 
-Run the notebook cells sequentially:
+Run the notebook sequentially:
 
 ```text
 Dataset Setup
@@ -622,11 +616,11 @@ Data Exploration
       ↓
 Dataset Verification
       ↓
-Image Visualization
+Visualization
       ↓
 Preprocessing
       ↓
-Data Augmentation
+Augmentation
       ↓
 Class Weight Calculation
       ↓
@@ -645,43 +639,17 @@ Single Image Prediction
 
 ---
 
-# 💡 Key Highlights
+# 📚 Skills Demonstrated
 
-* ✅ End-to-end deep learning workflow
-* ✅ Binary chest X-ray classification
-* ✅ Custom CNN architecture
-* ✅ Four convolutional blocks
-* ✅ Batch Normalization
-* ✅ Max Pooling
-* ✅ Dropout regularization
-* ✅ Image augmentation
-* ✅ Class weighting
-* ✅ Adam optimizer
-* ✅ Binary Crossentropy loss
-* ✅ Accuracy and AUC monitoring
-* ✅ Early stopping
-* ✅ Learning-rate reduction
-* ✅ Model checkpointing
-* ✅ Confusion Matrix evaluation
-* ✅ ROC-AUC evaluation
-* ✅ Classification Report
-* ✅ Single-image prediction
-* ✅ Kaggle dataset integration
-* ✅ GPU-based training workflow
-
----
-
-# 🔍 Skills Demonstrated
-
-This project demonstrates practical experience with:
+This project demonstrates practical experience in:
 
 * Python
 * Machine Learning
 * Deep Learning
 * Computer Vision
-* Convolutional Neural Networks
 * TensorFlow
 * Keras
+* CNN
 * Image Classification
 * Medical Image Analysis
 * Image Preprocessing
@@ -691,8 +659,8 @@ This project demonstrates practical experience with:
 * Class Imbalance Handling
 * Class Weighting
 * Model Evaluation
-* Hyperparameter Configuration
 * Model Regularization
+* Hyperparameter Configuration
 * ROC-AUC Analysis
 * Confusion Matrix
 * Classification Report
@@ -703,15 +671,17 @@ This project demonstrates practical experience with:
 
 # ⚠️ Limitations
 
-This project is an educational deep learning project and has several limitations:
+This is an **educational and research project**.
 
-* The dataset contains class imbalance.
-* The validation dataset is relatively small.
-* Model performance may vary on images from different hospitals or imaging systems.
+Limitations include:
+
+* Dataset class imbalance.
+* Relatively small validation dataset.
+* Model performance may vary on external datasets.
+* Images from different hospitals or imaging systems may have different characteristics.
 * The model has not been clinically validated.
-* Performance on external datasets may differ from the training/test dataset.
-* The model may not generalize to all patient populations or imaging conditions.
-* The model should not be considered a replacement for professional medical diagnosis.
+* External generalization has not been established.
+* The model should not replace professional medical evaluation.
 
 ---
 
@@ -719,84 +689,73 @@ This project is an educational deep learning project and has several limitations
 
 Potential improvements include:
 
-* Address class imbalance using additional suitable techniques.
-* Improve validation strategy.
-* Perform systematic hyperparameter tuning.
-* Experiment with transfer learning.
-* Compare architectures such as ResNet, DenseNet, EfficientNet, and MobileNet.
-* Implement Grad-CAM for model explainability.
-* Perform external validation using an independent dataset.
-* Improve model calibration.
-* Add experiment tracking.
-* Build a Streamlit prediction interface.
-* Develop an API for model inference.
-* Deploy the trained model as a web application.
-* Add automated model monitoring.
-* Perform more extensive error analysis.
-
----
-
-# 📚 Project Information
-
-| Item          | Details                             |
-| ------------- | ----------------------------------- |
-| Project       | Pneumonia Detection Using CNN       |
-| Domain        | Deep Learning / Computer Vision     |
-| Task          | Binary Image Classification         |
-| Input         | Chest X-Ray Image                   |
-| Input Size    | 150 × 150 × 1                       |
-| Classes       | NORMAL / PNEUMONIA                  |
-| Model         | Custom Convolutional Neural Network |
-| Framework     | TensorFlow / Keras                  |
-| Environment   | Google Colab                        |
-| Dataset       | Chest X-Ray Images (Pneumonia)      |
-| Test Images   | 624                                 |
-| Test Accuracy | 91.67%                              |
-| ROC-AUC       | 0.9661                              |
+* Transfer learning using pretrained CNN architectures.
+* Experiment with ResNet.
+* Experiment with DenseNet.
+* Experiment with EfficientNet.
+* Experiment with MobileNet.
+* Hyperparameter tuning.
+* Improved validation strategies.
+* External dataset validation.
+* Grad-CAM explainability.
+* Model calibration.
+* More extensive error analysis.
+* Experiment tracking.
+* Streamlit deployment.
+* REST API deployment.
+* Web-based prediction interface.
+* Model monitoring.
 
 ---
 
 # 📦 Project Files
 
-## Jupyter Notebook
+### 📓 Notebook
 
 ```text
 Pneumonia_Detection_Using_CNN.ipynb
 ```
 
-Contains the complete workflow for:
+Contains:
 
 * Dataset preparation
-* Data analysis
+* Data exploration
+* Dataset verification
 * Preprocessing
-* Augmentation
+* Data augmentation
 * CNN construction
 * Model training
-* Evaluation
+* Model evaluation
 * Visualization
-* Prediction
+* Single-image prediction
 
-## Requirements
+### 📋 Requirements
 
 ```text
 requirements.txt
 ```
 
-Contains the Python dependencies required to run the project.
+Contains the Python dependencies required for the project.
 
-## Visualizations
+### 🖼️ Visualizations
+
+The `images/` folder contains:
 
 ```text
-images/
+dataset_class_distribution.png
+sample_pneumonia_xray_images.png
+training_validation_curves.png
+training_validation_test_curves.png
+training_vs_testing_metrics.png
+confusion_matrix.png
+roc_curve.png
 ```
-
-Contains the project's model evaluation and dataset visualization outputs.
 
 ---
 
 # 👨‍💻 Author
 
-## SREEHARI.P
+## Shaam Shhanu
 
 **Aspiring Data Scientist | Machine Learning | Deep Learning | Computer Vision**
 
@@ -804,11 +763,17 @@ Contains the project's model evaluation and dataset visualization outputs.
 
 https://github.com/Sreeharistack
 
+### LinkedIn
+
+Add your LinkedIn profile URL here.
+
+---
+
 # 📄 License
 
 This project is licensed under the **MIT License**.
 
-See the `LICENSE` file for more information.
+See the `LICENSE` file for details.
 
 ---
 
@@ -825,22 +790,15 @@ It is **not a medical diagnostic tool** and should not be used for:
 
 The model has not been clinically validated.
 
-Any medical decision should be made by a qualified healthcare professional.
+Medical decisions should always be made by qualified healthcare professionals.
 
 ---
 
 # ⭐ Support
 
-If you found this project useful for learning about:
+If you found this project useful, consider giving the repository a ⭐ on GitHub.
 
-* Machine Learning
-* Deep Learning
-* CNN
-* Computer Vision
-* Medical Image Classification
-* TensorFlow/Keras
-
-please consider giving this repository a ⭐ on GitHub.
+Your support is appreciated!
 
 ---
 
@@ -848,6 +806,6 @@ please consider giving this repository a ⭐ on GitHub.
 
 Thank you for visiting this project!
 
-If you have suggestions, improvements, or ideas for extending this project, feel free to open an issue or submit a pull request.
+Feel free to explore the notebook, review the visualizations, and contribute improvements.
 
 **Built with Python, TensorFlow/Keras, and Deep Learning.**
