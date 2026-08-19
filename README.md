@@ -460,17 +460,12 @@ Potential improvements include:
 
 ## 👨‍💻 Author
 
-### Shaam Shhanu
+### Sreehari.P
 
 **Aspiring Data Scientist | Machine Learning | Deep Learning | Computer Vision**
 
 **GitHub:**  
 https://github.com/Sreeharistack
-
-**LinkedIn:**  
-_Add your LinkedIn profile URL here_
-
----
 
 ## ⚕️ Medical Disclaimer
 
