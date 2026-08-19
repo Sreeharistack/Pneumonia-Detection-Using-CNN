@@ -796,19 +796,13 @@ Contains the project's model evaluation and dataset visualization outputs.
 
 # 👨‍💻 Author
 
-## Shaam Shhanu
+## SREEHARI.P
 
 **Aspiring Data Scientist | Machine Learning | Deep Learning | Computer Vision**
 
 ### GitHub
 
 https://github.com/Sreeharistack
-
-### LinkedIn
-
-Add your LinkedIn profile URL here.
-
----
 
 # 📄 License
 
