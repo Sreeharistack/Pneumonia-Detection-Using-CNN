@@ -755,7 +755,7 @@ roc_curve.png
 
 # 👨‍💻 Author
 
-## Shaam Shhanu
+## SREEHARI.P
 
 **Aspiring Data Scientist | Machine Learning | Deep Learning | Computer Vision**
 
